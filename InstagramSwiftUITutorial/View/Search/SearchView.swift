@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct SearchView: View {
+    @State var searchText = ""
     var body: some View {
-        Text("Search")
+        ScrollView {
+            SearchBar(text: $searchText)
+                .padding()
+            // MARK: - search bar
+            
+            // MARK: - grid view/user list view
+        }
     }
 }
 

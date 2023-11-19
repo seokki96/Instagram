@@ -18,6 +18,7 @@
 		82F974112B0A341A000A2FBA /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F974102B0A341A000A2FBA /* NotificationView.swift */; };
 		82F974132B0A3429000A2FBA /* UploadPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F974122B0A3429000A2FBA /* UploadPostView.swift */; };
 		82F974152B0A3890000A2FBA /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F974142B0A3890000A2FBA /* FeedCell.swift */; };
+		82F974172B0A4841000A2FBA /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F974162B0A4841000A2FBA /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		82F974102B0A341A000A2FBA /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		82F974122B0A3429000A2FBA /* UploadPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostView.swift; sourceTree = "<group>"; };
 		82F974142B0A3890000A2FBA /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		82F974162B0A4841000A2FBA /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				82F9740C2B0A33EA000A2FBA /* SearchView.swift */,
+				82F974162B0A4841000A2FBA /* SearchBar.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				82F973E62B0A2EDD000A2FBA /* InstagramSwiftUITutorialApp.swift in Sources */,
 				82F974132B0A3429000A2FBA /* UploadPostView.swift in Sources */,
 				82F9740F2B0A33FB000A2FBA /* ProfileView.swift in Sources */,
+				82F974172B0A4841000A2FBA /* SearchBar.swift in Sources */,
 				82F974082B0A3351000A2FBA /* MainTabView.swift in Sources */,
 				82F974152B0A3890000A2FBA /* FeedCell.swift in Sources */,
 			);
