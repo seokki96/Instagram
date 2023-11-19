@@ -9,29 +9,34 @@ import SwiftUI
 
 struct MainTabView: View {
     var body: some View {
-        TabView {
-            FeedView()
-                .tabItem {
-                    Image(systemName: "house")
-                }
-            SearchView()
-                .tabItem {
-                    Image(systemName: "magnifyingglass")
-                }
-            UploadPostView()
-                .tabItem {
-                    Image(systemName: "plus.square")
-                }
-            NotificationView()
-                .tabItem {
-                    Image(systemName: "heart")
-                }
-            ProfileView()
-                .tabItem {
-                    Image(systemName: "person")
-                }
+        // navigationView로 TabView를 래핑
+        NavigationView {
+            TabView {
+                FeedView()
+                    .tabItem {
+                        Image(systemName: "house")
+                    }
+                SearchView()
+                    .tabItem {
+                        Image(systemName: "magnifyingglass")
+                    }
+                UploadPostView()
+                    .tabItem {
+                        Image(systemName: "plus.square")
+                    }
+                NotificationView()
+                    .tabItem {
+                        Image(systemName: "heart")
+                    }
+                ProfileView()
+                    .tabItem {
+                        Image(systemName: "person")
+                    }
+            }
+            .navigationTitle("Home")
+            .navigationBarTitleDisplayMode(.inline)
+            .accentColor(.black)
         }
-        .accentColor(.black)
     }
 }
 

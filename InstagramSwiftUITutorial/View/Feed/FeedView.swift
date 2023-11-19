@@ -9,7 +9,19 @@ import SwiftUI
 
 struct FeedView: View {
     var body: some View {
-        Text("Feed")
+        ScrollView {
+            /**
+            # LazyVstack
+            - 화면에서 로드될때만 메모리에 항목을 로드
+            - 이미지 캐시 기능(필요할때 다시 꺼냄)
+            - 실제로 네트워크 호출이 이루어질때 부드러운 스크롤을 제공
+             */
+            LazyVStack(spacing: 32) {
+                ForEach(0..<10) { _ in
+                    FeedCell()
+                }
+            }.padding(.top)
+        }
     }
 }
 
