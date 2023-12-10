@@ -20,7 +20,7 @@ struct RegistrationView: View {
     @State private var image: Image? // 받아온 이미지를 받기위한?
     @State private var imagePickerPresented = false
     @Environment(\.presentationMode) var mode
-    
+    @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [.purple, .blue]), startPoint: .top, endPoint: .bottom)
@@ -60,14 +60,14 @@ struct RegistrationView: View {
                         .foregroundColor(.white)
                         .padding(.horizontal, 32)
                     // email field
-                    CustomTextField(text: $email, placeholder: Text("Username"), imageName: "person")
+                    CustomTextField(text: $username, placeholder: Text("Username"), imageName: "person")
                         .padding()
                         .background(Color(.init(white:1, alpha: 0.15)))
                         .cornerRadius(10)
                         .foregroundColor(.white)
                         .padding(.horizontal, 32)
                     // email field
-                    CustomTextField(text: $email, placeholder: Text("Full name"), imageName: "person")
+                    CustomTextField(text: $fullname, placeholder: Text("Full name"), imageName: "person")
                         .padding()
                         .background(Color(.init(white:1, alpha: 0.15)))
                         .cornerRadius(10)
@@ -84,7 +84,9 @@ struct RegistrationView: View {
                 
                 // sign in
                 // frame을 설정하고 나서 배경색을 설정해야한다
-                Button(action: {  }, label: {
+                Button(action: { 
+                    viewModel.register(withEmail: email, password: password, image: selectedImage, fullname: fullname, username: username)
+                }, label: {
                     Text("Sign Up")
                         .font(.headline)
                         .foregroundColor(.white)

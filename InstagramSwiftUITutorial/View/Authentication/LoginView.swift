@@ -10,6 +10,8 @@ import SwiftUI
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
         // 탐색 스택을 추가 NavigationController의 역할
         NavigationView {
@@ -56,7 +58,9 @@ struct LoginView: View {
                     }
                     // sign in
                     // frame을 설정하고 나서 배경색을 설정해야한다
-                    Button(action: {}, label: {
+                    Button(action: {
+                        viewModel.login(withEmail: email, password: password)
+                    }, label: {
                         Text("Sign In")
                             .font(.headline)
                             .foregroundColor(.white)
