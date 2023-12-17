@@ -11,6 +11,7 @@ import Firebase
 // 뷰모델에서 네트워크에 데이터 변경을 요청 -> 요청되고 변경된 데이터로 UI를 업데이트
 class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
+    @Published var currentUser: User?
     
     // 공유 인스턴스로 공유된 객체에 접근가능 EnvirmentObject 방식을 사용해도됨
     static let shared = AuthViewModel()
@@ -30,6 +31,7 @@ class AuthViewModel: ObservableObject {
             
             guard let user = result?.user else { return }
             self.userSession = user
+            self.fetchUser()
         }
     }
     
@@ -58,6 +60,7 @@ class AuthViewModel: ObservableObject {
                 COLLECTION_USERS.document(user.uid).setData(data) { _ in
                     print("Succesfully uploaded user data...")
                     self.userSession = user
+                    self.fetchUser()
                 }
             }
         }
@@ -76,7 +79,7 @@ class AuthViewModel: ObservableObject {
         guard let uid = userSession?.uid else { return }
         COLLECTION_USERS.document(uid).getDocument { snapShot, _ in
             guard let user = try? snapShot?.data(as: User.self) else { return } // User모델을 디코딩
-            print("DEBUG: User is \(user)")
+            self.currentUser = user
         }
     }
 }

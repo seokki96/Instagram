@@ -14,4 +14,6 @@ struct User: Identifiable, Decodable {
     let profileImageUrl: String
     let fullname: String
     @DocumentID var id: String? // firestore에 해당 유형을 문서 ID에 매핑
+    
+    var isCurrentUser: Bool { return AuthViewModel.shared.userSession?.uid == id }
 }

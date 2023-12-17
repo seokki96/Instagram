@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainTabView: View {
+    let user: User
     var body: some View {
         // navigationView로 TabView를 래핑
         NavigationView {
@@ -28,7 +29,7 @@ struct MainTabView: View {
                     .tabItem {
                         Image(systemName: "heart")
                     }
-                ProfileView()
+                ProfileView(user: user)
                     .tabItem {
                         Image(systemName: "person")
                     }
@@ -49,6 +50,6 @@ struct MainTabView: View {
     }
 }
 
-#Preview {
-    MainTabView()
-}
+//#Preview {
+//    MainTabView()
+//}
