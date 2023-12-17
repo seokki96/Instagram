@@ -11,6 +11,7 @@
 		82742FE42B2F507D00B517DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82742FE32B2F507D00B517DF /* GoogleService-Info.plist */; };
 		82742FE62B2F529300B517DF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82742FE52B2F529300B517DF /* Constants.swift */; };
 		82742FE82B2F546300B517DF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82742FE72B2F546300B517DF /* User.swift */; };
+		82742FEA2B2F593100B517DF /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82742FE92B2F593100B517DF /* SearchViewModel.swift */; };
 		8280EA742B1D2AB700AC0C65 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280EA732B1D2AB700AC0C65 /* LoginView.swift */; };
 		8280EA762B1D2AC700AC0C65 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280EA752B1D2AC700AC0C65 /* RegistrationView.swift */; };
 		8280EA782B1D2AD200AC0C65 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280EA772B1D2AD200AC0C65 /* ResetPasswordView.swift */; };
@@ -92,6 +93,7 @@
 		82742FE32B2F507D00B517DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		82742FE52B2F529300B517DF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		82742FE72B2F546300B517DF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = InstagramSwiftUITutorial/Utils/User.swift; sourceTree = SOURCE_ROOT; };
+		82742FE92B2F593100B517DF /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		8280EA732B1D2AB700AC0C65 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		8280EA752B1D2AC700AC0C65 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		8280EA772B1D2AD200AC0C65 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 		82F973F52B0A30BF000A2FBA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				82742FE92B2F593100B517DF /* SearchViewModel.swift */,
 				82F974062B0A3205000A2FBA /* Profile */,
 				82F974052B0A31F8000A2FBA /* Authentication */,
 				82F974042B0A31EF000A2FBA /* Notifications */,
@@ -528,6 +531,7 @@
 				82CFA9552B1437AA006CF7A7 /* UserStatView.swift in Sources */,
 				82F9741B2B0A4D5E000A2FBA /* UserCell.swift in Sources */,
 				8280EA7C2B1D2DDF00AC0C65 /* CustomSecureField.swift in Sources */,
+				82742FEA2B2F593100B517DF /* SearchViewModel.swift in Sources */,
 				82F974172B0A4841000A2FBA /* SearchBar.swift in Sources */,
 				82F974082B0A3351000A2FBA /* MainTabView.swift in Sources */,
 				82742FE82B2F546300B517DF /* User.swift in Sources */,
