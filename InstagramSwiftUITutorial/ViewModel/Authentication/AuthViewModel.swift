@@ -16,7 +16,8 @@ class AuthViewModel: ObservableObject {
     static let shared = AuthViewModel()
     
     init() {
-        userSession = Auth.auth().currentUser
+        userSession = Auth.auth().currentUser // 사용자 세션을 불러옴
+        fetchUser() // 세션 uid를 사용하여 유저정보를 가져옴
     }
     
     
@@ -54,7 +55,7 @@ class AuthViewModel: ObservableObject {
                     "uid": user.uid
                 ]
                 
-                Firestore.firestore().collection("users").document(user.uid).setData(data) { _ in
+                COLLECTION_USERS.document(user.uid).setData(data) { _ in
                     print("Succesfully uploaded user data...")
                     self.userSession = user
                 }
@@ -72,6 +73,10 @@ class AuthViewModel: ObservableObject {
     }
     
     func fetchUser() {
-        
+        guard let uid = userSession?.uid else { return }
+        COLLECTION_USERS.document(uid).getDocument { snapShot, _ in
+            guard let user = try? snapShot?.data(as: User.self) else { return } // User모델을 디코딩
+            print("DEBUG: User is \(user)")
+        }
     }
 }
