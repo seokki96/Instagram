@@ -21,7 +21,7 @@ struct SearchView: View {
             // 검색모드 상태에 따라서 뷰를 결정
             ZStack {
                 if inSearchMode {
-                    UserListView(viewModel: viewModel)
+                    UserListView(viewModel: viewModel, searchText: $searchText)
                 } else {
                     PostGridView()
                 }
