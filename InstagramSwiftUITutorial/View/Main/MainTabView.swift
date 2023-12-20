@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainTabView: View {
     let user: User
+    
     var body: some View {
         // navigationView로 TabView를 래핑
         NavigationView {
