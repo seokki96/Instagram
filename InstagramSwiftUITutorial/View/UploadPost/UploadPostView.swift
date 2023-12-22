@@ -14,6 +14,7 @@ struct UploadPostView: View {
     @State var postImage: Image? // 받아온 이미지를 받기위한?
     @State var captionText = ""
     @State var imagePickerPresented = false
+    @ObservedObject var viewModel: UploadPostViewModel = UploadPostViewModel()
     var body: some View {
         VStack {
             if postImage == nil {
@@ -41,7 +42,11 @@ struct UploadPostView: View {
                     
                     TextField("Enter your caption..", text: $captionText)
                 } .padding()
-                Button(action: {}, label: {
+                Button(action: {
+                    if let selectedImage = selectedImage  {
+                        viewModel.uploadPost(caption: captionText, image: selectedImage)
+                    }
+                }, label: {
                     Text("Share")
                         .font(.system(size: 16, weight: .semibold))
                         .frame(width: 360, height: 50)
