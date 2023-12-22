@@ -6,6 +6,8 @@
 //
 
 import Firebase
+
+typealias FireStoreCompletion = ((Error?) -> Void)?
 // 기능을 여러곳에서 사용하는 경우 서비스로직을 분리
 // ((Error?) -> Void)? firebase에서 작업이 완료되면 해당 형태로 completion 핸들러를 반환
 struct UserService {

@@ -14,6 +14,7 @@ struct UploadPostView: View {
     @State var postImage: Image? // 받아온 이미지를 받기위한?
     @State var captionText = ""
     @State var imagePickerPresented = false
+    @Binding var tabIndex: Int
     @ObservedObject var viewModel: UploadPostViewModel = UploadPostViewModel()
     var body: some View {
         VStack {
@@ -44,7 +45,11 @@ struct UploadPostView: View {
                 } .padding()
                 Button(action: {
                     if let selectedImage = selectedImage  {
-                        viewModel.uploadPost(caption: captionText, image: selectedImage)
+                        viewModel.uploadPost(caption: captionText, image: selectedImage) { _ in
+                            captionText = ""
+                            postImage = nil
+                            tabIndex = 0
+                        }
                     }
                 }, label: {
                     Text("Share")
@@ -70,6 +75,6 @@ extension UploadPostView {
     }
 }
 
-#Preview {
-    UploadPostView()
-}
+//#Preview {
+//    UploadPostView()
+//}
