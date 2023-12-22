@@ -72,6 +72,7 @@
 		82D78C972B25DB440057A01A /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 82D78C962B25DB440057A01A /* FirebaseRemoteConfigSwift */; };
 		82D78C992B25DB440057A01A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 82D78C982B25DB440057A01A /* FirebaseStorage */; };
 		82D78C9B2B25DB440057A01A /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 82D78C9A2B25DB440057A01A /* FirebaseStorageCombine-Community */; };
+		82E25EEA2B35FCD40052276E /* TextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E25EE92B35FCD40052276E /* TextArea.swift */; };
 		82F973E62B0A2EDD000A2FBA /* InstagramSwiftUITutorialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F973E52B0A2EDD000A2FBA /* InstagramSwiftUITutorialApp.swift */; };
 		82F973EA2B0A2EDF000A2FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82F973E92B0A2EDF000A2FBA /* Assets.xcassets */; };
 		82F973ED2B0A2EDF000A2FBA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82F973EC2B0A2EDF000A2FBA /* Preview Assets.xcassets */; };
@@ -110,6 +111,7 @@
 		82CFA9562B14390E006CF7A7 /* ProfileActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileActionButton.swift; sourceTree = "<group>"; };
 		82D78C642B25ACA60057A01A /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		82D78C662B25D67A0057A01A /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
+		82E25EE92B35FCD40052276E /* TextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextArea.swift; sourceTree = "<group>"; };
 		82F973E22B0A2EDD000A2FBA /* InstagramSwiftUITutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramSwiftUITutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F973E52B0A2EDD000A2FBA /* InstagramSwiftUITutorialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramSwiftUITutorialApp.swift; sourceTree = "<group>"; };
 		82F973E92B0A2EDF000A2FBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				8280EA792B1D2DD100AC0C65 /* CustomTextField.swift */,
 				8280EA7B2B1D2DDF00AC0C65 /* CustomSecureField.swift */,
 				82742FE52B2F529300B517DF /* Constants.swift */,
+				82E25EE92B35FCD40052276E /* TextArea.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				82F973E62B0A2EDD000A2FBA /* InstagramSwiftUITutorialApp.swift in Sources */,
 				82CD63052B353E3500187658 /* UploadPostViewModel.swift in Sources */,
 				826318AD2B19545500B970AA /* ImagePicker.swift in Sources */,
+				82E25EEA2B35FCD40052276E /* TextArea.swift in Sources */,
 				82F974132B0A3429000A2FBA /* UploadPostView.swift in Sources */,
 				822679902B3343E400A5EE77 /* UserService.swift in Sources */,
 				82CFA9532B143360006CF7A7 /* ProfileHeaderView.swift in Sources */,
