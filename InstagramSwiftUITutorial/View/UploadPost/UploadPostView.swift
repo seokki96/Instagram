@@ -44,23 +44,41 @@ struct UploadPostView: View {
                     TextArea(text: $captionText, placeholder: "Enter your caption...")
                         .frame(height: 200)
                 } .padding()
-                Button(action: {
-                    if let selectedImage = selectedImage  {
-                        viewModel.uploadPost(caption: captionText, image: selectedImage) { _ in
-                            captionText = ""
-                            postImage = nil
-                            tabIndex = 0
+                HStack(spacing: 16) {
+                    Button(action: {
+                        captionText = ""
+                        postImage = nil
+                    }, label: {
+                        Text("Cancel")
+                            .font(.system(size: 16, weight: .semibold))
+                            .frame(width: 172, height: 50)
+                            .background(.red)
+                            .foregroundColor(.white)
+                            .cornerRadius(5)
+                    })
+           
+                    
+                    Button(action: {
+                        if let selectedImage = selectedImage  {
+                            viewModel.uploadPost(caption: captionText, image: selectedImage) { _ in
+                                captionText = ""
+                                postImage = nil
+                                tabIndex = 0
+                            }
                         }
-                    }
-                }, label: {
-                    Text("Share")
-                        .font(.system(size: 16, weight: .semibold))
-                        .frame(width: 360, height: 50)
-                        .background(.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(5)
-                })
-                .padding()
+                    }, label: {
+                        Text("Share")
+                            .font(.system(size: 16, weight: .semibold))
+                            .frame(width: 172, height: 50)
+                            .background(.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(5)
+                    })
+               
+                }
+               
+                
+            
             }
             Spacer()
         }
