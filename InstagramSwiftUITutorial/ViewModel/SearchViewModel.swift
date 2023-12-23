@@ -9,9 +9,10 @@ import SwiftUI
 
 class SearchViewModel: ObservableObject {
     @Published var users = [User]()
-    
+  
     init() {
         fetchUsers()
+      
     }
     
     func fetchUsers() {
@@ -28,4 +29,6 @@ class SearchViewModel: ObservableObject {
         return users.filter {$0.fullname.lowercased().contains(lowercasedQuery) || 
             $0.username.lowercased().contains(lowercasedQuery)}
     }
+    
+
 }
