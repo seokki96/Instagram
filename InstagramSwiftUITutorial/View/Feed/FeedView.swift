@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FeedView: View {
+    @ObservedObject var viewModel = FeedViewModel()
     var body: some View {
         ScrollView {
             /**
@@ -17,8 +18,8 @@ struct FeedView: View {
             - 실제로 네트워크 호출이 이루어질때 부드러운 스크롤을 제공
              */
             LazyVStack(spacing: 32) {
-                ForEach(0..<10) { _ in
-                    FeedCell()
+                ForEach(viewModel.posts) { post in
+                    FeedCell(post: post)
                 }
             }.padding(.top)
         }

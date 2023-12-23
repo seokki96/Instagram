@@ -6,20 +6,22 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct FeedCell: View {
+    let post: Post
     var body: some View {
         VStack(alignment: .leading) {
             // usre info
             HStack {
-                Image("sample01")
+                KFImage(URL(string: post.imageUrl))
                     .resizable()
-                    .scaledToFit()
+                    .scaledToFill()
                     .frame(width: 36, height: 36)
                     .clipped()
                     .cornerRadius(18)
                 
-                Text("sinheyseon")
+                Text(post.ownerUsername)
                     .font(.system(size: 14))
             }
             .padding([.leading, .bottom], 8)
@@ -27,7 +29,7 @@ struct FeedCell: View {
             // MARK: - post image
             // maxHeight로 지정해서 사진의 크기에따라 자동으로 크기를 조절
             // cliped로 컨텐츠가 이미지뷰를 넘어가지 않도록 설정
-            Image("sample01")
+            KFImage(URL(string: post.imageUrl))
                 .resizable()
                 .scaledToFill()
                 .frame(maxHeight: 440)
@@ -66,13 +68,13 @@ struct FeedCell: View {
             .foregroundColor(.black)
             
             // MARK: - cations
-            Text("3 likes")
+            Text("\(post.likes) likes")
                 .font(.system(size: 14, weight: .semibold))
                 .padding(.leading, 8)
                 .padding(.bottom, 4)
             HStack {
-                Text("batman").font(.system(size: 14, weight: .semibold)) +
-                Text("All men have limits. They learn whar they are and learn not to excced them. I ignore mine")
+                Text(post.ownerUsername).font(.system(size: 14, weight: .semibold)) 
+                Text(post.caption)
                     .font(.system(size: 15))
             }.padding(.horizontal, 8)
             
@@ -84,6 +86,6 @@ struct FeedCell: View {
     }
 }
 
-#Preview {
-    FeedCell()
-}
+//#Preview {
+//    FeedCell()
+//}

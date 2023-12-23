@@ -18,8 +18,7 @@ class SearchViewModel: ObservableObject {
         COLLECTION_USERS.getDocuments { snapShot, _ in
             // error가 발생할 경우 빈배열
             guard let documents = snapShot?.documents else { return }
-            let users = documents.compactMap {try?  $0.data(as: User.self)}
-            print(users)
+            let users = documents.compactMap {try?  $0.data(as: User.self)}            
             self.users = users
         }
     }
