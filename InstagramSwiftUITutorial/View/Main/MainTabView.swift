@@ -63,7 +63,7 @@ struct MainTabView: View {
         Button(action: {
             AuthViewModel.shared.signout()
         }, label: {
-            Text("Button").foregroundColor(.black)
+            Text("Logout").foregroundColor(.black)
         })
     }
     
