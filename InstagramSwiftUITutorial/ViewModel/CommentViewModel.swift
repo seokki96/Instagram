@@ -8,10 +8,12 @@
 import SwiftUI
 import Firebase
 class CommentViewModel: ObservableObject {
+    @Published var comments = [Comment]()
     private let post: Post
     
     init(post: Post) {
         self.post = post
+        fetchComments()
     }
     func uploadCommnet(commentText: String) {
         guard let user = AuthViewModel.shared.currentUser else { return }
@@ -32,6 +34,20 @@ class CommentViewModel: ObservableObject {
     }
     
     func fetchComments() {
+        guard let postId = post.id else { return }
+        let query = COLLECTION_POSTS.document(postId).collection("post-comments").order(by: "timestamp", descending: false)
         
+        // 리스너를 추가하여 실시간 데이터 가져오기
+        query.addSnapshotListener { snapShot, _ in
+            guard let addedDocs = snapShot?.documentChanges.filter({ $0.type == .added}) else { return }
+            self.comments += addedDocs.compactMap({try? $0.document.data(as: Comment.self)})
+            
+//            snapShot?.documentChanges.forEach({ change in
+//                if change.type == .added {
+//                    guard let comment = try? change.document.data(as: Comment.self) else { return }
+//                    self.comments.append(comment)
+//                }
+//            })
+        }
     }
 }
