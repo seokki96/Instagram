@@ -15,7 +15,8 @@ struct FeedCell: View {
     
     init(viewModel: FeedCellViewModel) {
         self.viewModel = viewModel
-    } 
+    }
+    
     var body: some View {
         VStack(alignment: .leading) {
             // usre info
@@ -52,19 +53,19 @@ struct FeedCell: View {
                         .scaledToFit()
                         .frame(width: 20, height: 20)
                         .font(.system(size: 14))
-                        
+                    
             
                 }.padding(4)
                 
-                Button(action: {}) {
+                NavigationLink(destination: CommentsView()) {
+                    
                     Image(systemName: "bubble.right")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 20, height: 20)
                         .font(.system(size: 14))
-                    
-                    
-                }.padding(4)
+            
+                }
                 
                 Button(action: {}) {
                     Image(systemName: "paperplane")
@@ -84,7 +85,7 @@ struct FeedCell: View {
                 .padding(.leading, 8)
                 .padding(.bottom, 4)
             HStack {
-                Text(viewModel.post.ownerUsername).font(.system(size: 14, weight: .semibold)) 
+                Text(viewModel.post.ownerUsername).font(.system(size: 14, weight: .semibold))
                 Text(viewModel.post.caption)
                     .font(.system(size: 15))
             }.padding(.horizontal, 8)

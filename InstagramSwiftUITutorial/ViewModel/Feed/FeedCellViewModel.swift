@@ -24,10 +24,14 @@ class FeedCellViewModel: ObservableObject {
         guard let uid = AuthViewModel.shared.userSession?.uid else { return }
         guard let postId = post.id else { return }
         
+        // 현재 post의 post-likes 라는 컬렉션 하위에 현재 유저의 uid를 추가
         COLLECTION_POSTS.document(postId).collection("post-likes").document(uid).setData([:]) { _ in
+            // 현재 유저의 문서에 user-likes에 postId를 추가
             COLLECTION_USERS.document(uid).collection("user-likes")
                 .document(postId).setData([:]) { _ in
+                    // 현재 post의 likes 업데이트
                     COLLECTION_POSTS.document(postId).updateData(["likes": self.post.likes + 1])
+                    // UI를 업데이트 하기위한 데이터 업데이트
                     self.post.didLike = true
                     self.post.likes += 1
                 }
@@ -53,6 +57,7 @@ class FeedCellViewModel: ObservableObject {
         guard let uid = AuthViewModel.shared.userSession?.uid else { return }
         guard let postId = post.id else { return }
         
+        // 현재유저의 user-likes에 현재 포스트가 존재한다면 didLike를 true로 변경
         COLLECTION_USERS.document(uid).collection("user-likes").document(postId).getDocument { snapShot, _ in
             guard let didLike = snapShot?.exists else { return }
             self.post.didLike = didLike
