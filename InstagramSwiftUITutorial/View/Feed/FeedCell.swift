@@ -48,10 +48,11 @@ struct FeedCell: View {
                 }) {
                     Image(systemName: didLike ? "heart.fill" : "heart")
                         .resizable()
+                        .foregroundColor(didLike ? .pink : .black)
                         .scaledToFit()
                         .frame(width: 20, height: 20)
                         .font(.system(size: 14))
-                        .foregroundColor(didLike ? .pink : .black)
+                        
             
                 }.padding(4)
                 
