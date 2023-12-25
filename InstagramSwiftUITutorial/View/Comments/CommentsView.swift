@@ -9,6 +9,11 @@ import SwiftUI
 
 struct CommentsView: View {
     @State var commentText = ""
+    @ObservedObject var viewModel: CommentViewModel
+    
+    init(post: Post) {
+        viewModel = CommentViewModel(post: post)
+    }
     var body: some View {
         VStack {
             // comment cells
@@ -25,10 +30,11 @@ struct CommentsView: View {
     }
     
     func uploadComment() {
-        
+        viewModel.uploadCommnet(commentText: commentText)
+        commentText = ""
     }
 }
 
-#Preview {
-    CommentsView()
-}
+//#Preview {
+//    CommentsView()
+//}
