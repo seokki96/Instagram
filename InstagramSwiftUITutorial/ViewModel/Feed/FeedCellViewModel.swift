@@ -32,6 +32,9 @@ class FeedCellViewModel: ObservableObject {
                     // 현재 post의 likes 업데이트
                     COLLECTION_POSTS.document(postId).updateData(["likes": self.post.likes + 1])
                     // UI를 업데이트 하기위한 데이터 업데이트
+                    
+                    NotificationViewModel.uploadNotification(toUid: self.post.ownerUid, type: .like, post: self.post)
+                    
                     self.post.didLike = true
                     self.post.likes += 1
                 }

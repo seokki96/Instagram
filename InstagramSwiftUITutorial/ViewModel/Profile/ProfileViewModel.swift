@@ -18,6 +18,7 @@ class ProfileViewModel: ObservableObject {
     func follow() {
         guard let uid = user.id else { return } // 팔로우를 하려는 상대의 uid
         UserService.follow(uid: uid) { _ in
+            NotificationViewModel.uploadNotification(toUid: uid, type: .follow)
             print("Successfully follwed \(self.user.username)")
             self.user.isFollowed = true
         }
