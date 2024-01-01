@@ -14,7 +14,7 @@ struct Notification: Identifiable, Decodable {
     let username: String
     let profileImageUrl: String
     let timestamp: Timestamp
-    let type: Int
+    let type: NotificationType // 숫자형태의 값을 전달받으면 type이 정해지는 원리
     let uid: String // 알림을 보낸 사용자의 uid
 }
 
