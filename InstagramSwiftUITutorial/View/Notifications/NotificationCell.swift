@@ -18,23 +18,31 @@ struct NotificationCell: View {
     
     var body: some View {
         HStack {
-            KFImage(URL(string: viewModel.notification.profileImageUrl))
-                .resizable()
-                .scaledToFill()
-                .frame(width: 40, height: 40)
-                .clipShape(Circle())
-            
-            
-            Text(viewModel.notification.username).font(.system(size: 14, weight: .semibold)) +
-            Text(" \(viewModel.notification.type.notificationMessage)")
-                    .font(.system(size: 15))
+            if let user = viewModel.notification.user {
+                NavigationLink(destination: ProfileView(user: user)) {
+                    KFImage(URL(string: viewModel.notification.profileImageUrl))
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40)
+                        .clipShape(Circle())
+                    
+                    
+                    Text(viewModel.notification.username).font(.system(size: 14, weight: .semibold)) +
+                    Text(" \(viewModel.notification.type.notificationMessage)")
+                            .font(.system(size: 15))
+                }
+            }
             Spacer()
             if viewModel.notification.type != .follow {
-                Image("sample01")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 40, height: 40)
-                    .clipped()
+                if let post = viewModel.notification.post {
+                    NavigationLink(destination: FeedCell(viewModel: FeedCellViewModel(post: post))) {
+                        KFImage(URL(string: post.imageUrl))
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 40, height: 40)
+                            .clipped()
+                    }
+                }
             } else {
                 Button(action: { isFollwed ? viewModel.unfollow() : viewModel.follow() }) {
                     Text(isFollwed ? "Following" : "Follow")
@@ -42,8 +50,9 @@ struct NotificationCell: View {
                         .frame(width: 100, height: 32)
                         .foregroundColor(isFollwed ? .black : .white)
                         .background(isFollwed ? .white : .blue)
+                        .cornerRadius(3)
                         .overlay(
-                            RoundedRectangle(cornerRadius: 10)
+                            RoundedRectangle(cornerRadius: 3)
                                 .stroke(.gray, lineWidth: isFollwed ? 1 : 0)
                         )
                         

@@ -18,6 +18,8 @@ struct Notification: Identifiable, Decodable {
     let uid: String // 알림을 보낸 사용자의 uid
     
     var isFollowed: Bool? = false
+    var post: Post?
+    var user: User?
 }
 
 enum NotificationType: Int, Decodable {
