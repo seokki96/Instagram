@@ -16,6 +16,8 @@ struct Notification: Identifiable, Decodable {
     let timestamp: Timestamp
     let type: NotificationType // 숫자형태의 값을 전달받으면 type이 정해지는 원리
     let uid: String // 알림을 보낸 사용자의 uid
+    
+    var isFollowed: Bool? = false
 }
 
 enum NotificationType: Int, Decodable {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		821D72702B42A1F40086E091 /* NotificationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821D726F2B42A1F40086E091 /* NotificationCellViewModel.swift */; };
 		8226798E2B333E8600A5EE77 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8226798D2B333E8600A5EE77 /* ProfileViewModel.swift */; };
 		822679902B3343E400A5EE77 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8226798F2B3343E400A5EE77 /* UserService.swift */; };
 		826318AD2B19545500B970AA /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826318AC2B19545400B970AA /* ImagePicker.swift */; };
@@ -104,6 +105,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		821D726F2B42A1F40086E091 /* NotificationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCellViewModel.swift; sourceTree = "<group>"; };
 		8226798D2B333E8600A5EE77 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		8226798F2B3343E400A5EE77 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		826318AC2B19545400B970AA /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				82E6174F2B41AFC00046C36F /* NotificationViewModel.swift */,
+				821D726F2B42A1F40086E091 /* NotificationCellViewModel.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				8280EA742B1D2AB700AC0C65 /* LoginView.swift in Sources */,
 				82F9741F2B0A52F2000A2FBA /* Extensions.swift in Sources */,
 				82E6174D2B41ADC50046C36F /* Notification.swift in Sources */,
+				821D72702B42A1F40086E091 /* NotificationCellViewModel.swift in Sources */,
 				82BCF06C2B39AE33001C3EC8 /* Comment.swift in Sources */,
 				82742FE62B2F529300B517DF /* Constants.swift in Sources */,
 				828283BA2B373ACA0044FD39 /* User.swift in Sources */,
